@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: abewolfpipeline 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: abewolfpipeline 
+    spec:
+      containers:
+        - name: abewolfpipeline 
+          image: lazuredrupalacr.azurecr.io/abewolfpipeline
+          ports:
+          - containerPort: 8080
